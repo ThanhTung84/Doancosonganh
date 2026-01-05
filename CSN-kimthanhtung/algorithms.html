@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Thuật Toán - Học Thuật Toán Sắp Xếp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Thuật Toán Sắp Xếp</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="algorithms.html" class="active">Thuật Toán</a></li>
+                    <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+                <div id="userInfo" class="user-info"></div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chi Tiết Thuật Toán -->
+    <section class="algorithms-detail-section page-section">
+        <div class="container">
+            <h1 class="page-title">Các Thuật Toán Sắp Xếp</h1>
+            <p class="page-description">Tìm hiểu chi tiết về các thuật toán sắp xếp phổ biến, độ phức tạp và ứng dụng thực tế.</p>
+            
+            <div class="algorithms-grid">
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Bubble Sort (Sắp Xếp Nổi Bọt)</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p><strong>Mô tả:</strong> Thuật toán so sánh các cặp phần tử liền kề và hoán đổi chúng nếu sai thứ tự. Quá trình lặp lại cho đến khi mảng được sắp xếp hoàn toàn.</p>
+                    <p><strong>Cách hoạt động:</strong> Duyệt qua mảng nhiều lần, mỗi lần đẩy phần tử lớn nhất về cuối mảng như bong bóng nổi lên.</p>
+                    <ul class="algo-features">
+                        <li>✓ Dễ hiểu, dễ cài đặt</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✓ Không cần bộ nhớ phụ</li>
+                        <li>✗ Chậm với dữ liệu lớn</li>
+                        <li>✗ Không hiệu quả trong thực tế</li>
+                    </ul>
+                    <p><strong>Ứng dụng:</strong> Phù hợp cho mục đích học tập, dữ liệu nhỏ hoặc gần như đã sắp xếp.</p>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Selection Sort (Sắp Xếp Chọn)</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p><strong>Mô tả:</strong> Tìm phần tử nhỏ nhất trong phần chưa sắp xếp và đặt nó vào đầu. Lặp lại cho đến khi hoàn thành toàn bộ mảng.</p>
+                    <p><strong>Cách hoạt động:</strong> Chia mảng thành hai phần: đã sắp xếp và chưa sắp xếp. Liên tục chọn phần tử nhỏ nhất từ phần chưa sắp xếp.</p>
+                    <ul class="algo-features">
+                        <li>✓ Đơn giản, dễ hiểu</li>
+                        <li>✓ Ít phép hoán đổi (n-1 lần)</li>
+                        <li>✓ Hiệu suất ổn định</li>
+                        <li>✗ Không ổn định</li>
+                        <li>✗ Chậm với dữ liệu lớn</li>
+                    </ul>
+                    <p><strong>Ứng dụng:</strong> Tốt khi chi phí hoán đổi cao, dữ liệu nhỏ.</p>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Insertion Sort (Sắp Xếp Chèn)</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p><strong>Mô tả:</strong> Xây dựng mảng đã sắp xếp từng phần tử một bằng cách chèn mỗi phần tử vào vị trí đúng trong phần đã sắp xếp.</p>
+                    <p><strong>Cách hoạt động:</strong> Giống như sắp xếp bài trong tay, lấy từng phần tử và chèn vào vị trí thích hợp.</p>
+                    <ul class="algo-features">
+                        <li>✓ Hiệu quả với dữ liệu nhỏ</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✓ Tốt với dữ liệu gần sắp xếp</li>
+                        <li>✓ Sắp xếp online (thời gian thực)</li>
+                        <li>✗ Chậm với dữ liệu lớn</li>
+                    </ul>
+                    <p><strong>Ứng dụng:</strong> Dữ liệu nhỏ, dữ liệu gần sắp xếp, sắp xếp online.</p>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Quick Sort (Sắp Xếp Nhanh)</h3>
+                        <span class="complexity-badge success">O(n log n)</span>
+                    </div>
+                    <p><strong>Mô tả:</strong> Thuật toán chia để trị chọn một phần tử làm pivot và phân hoạch mảng thành hai phần nhỏ hơn và lớn hơn pivot, sau đó sắp xếp đệ quy.</p>
+                    <p><strong>Cách hoạt động:</strong> Chọn pivot, phân hoạch mảng, đệ quy sắp xếp hai phần.</p>
+                    <ul class="algo-features">
+                        <li>✓ Rất nhanh trong thực tế</li>
+                        <li>✓ Hiệu quả với dữ liệu lớn</li>
+                        <li>✓ Sắp xếp tại chỗ (in-place)</li>
+                        <li>✗ Không ổn định</li>
+                        <li>✗ Worst case O(n²)</li>
+                    </ul>
+                    <p><strong>Ứng dụng:</strong> Sắp xếp mảng lớn, thư viện chuẩn của nhiều ngôn ngữ.</p>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Merge Sort (Sắp Xếp Trộn)</h3>
+                        <span class="complexity-badge success">O(n log n)</span>
+                    </div>
+                    <p><strong>Mô tả:</strong> Chia mảng thành các mảng con nhỏ hơn, sắp xếp chúng và sau đó trộn lại thành mảng đã sắp xếp hoàn chỉnh.</p>
+                    <p><strong>Cách hoạt động:</strong> Chia đôi mảng đệ quy cho đến khi còn 1 phần tử, sau đó trộn các mảng con đã sắp xếp.</p>
+                    <ul class="algo-features">
+                        <li>✓ Hiệu suất ổn định O(n log n)</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✓ Tốt với dữ liệu lớn</li>
+                        <li>✓ Phù hợp sắp xếp linked list</li>
+                        <li>✗ Cần bộ nhớ phụ O(n)</li>
+                    </ul>
+                    <p><strong>Ứng dụng:</strong> Sắp xếp dữ liệu lớn, linked list, external sorting.</p>
+                </div>
+            </div>
+
+            <div class="comparison-section">
+                <h2>So Sánh Các Thuật Toán</h2>
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Thuật Toán</th>
+                                <th>Best Case</th>
+                                <th>Average Case</th>
+                                <th>Worst Case</th>
+                                <th>Bộ Nhớ</th>
+                                <th>Ổn Định</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Bubble Sort</td>
+                                <td>O(n)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Selection Sort</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <td>Insertion Sort</td>
+                                <td>O(n)</td>
+                                <td>O(n²)</td>
+                                <td>O(n²)</td>
+                                <td>O(1)</td>
+                                <td>✓</td>
+                            </tr>
+                            <tr>
+                                <td>Quick Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n²)</td>
+                                <td>O(log n)</td>
+                                <td>✗</td>
+                            </tr>
+                            <tr>
+                                <td>Merge Sort</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n log n)</td>
+                                <td>O(n)</td>
+                                <td>✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuật Toán Sắp Xếp</h3>
+                    <p>Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="algorithms.html">Thuật Toán</a></li>
+                        <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>Email: makara1999.tv@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

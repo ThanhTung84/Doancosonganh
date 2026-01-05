@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn - Học Thuật Toán Sắp Xếp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Thuật Toán Sắp Xếp</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="algorithms.html">Thuật Toán</a></li>
+                    <li><a href="tutorial.html" class="active">Hướng Dẫn</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+                <div id="userInfo" class="user-info"></div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hướng Dẫn -->
+    <section class="tutorial-section page-section">
+        <div class="container">
+            <h1 class="page-title">Hướng Dẫn Sử Dụng</h1>
+            <p class="page-description">Làm theo các bước đơn giản sau để bắt đầu học thuật toán sắp xếp</p>
+            
+            <div class="tutorial-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Chọn Thuật Toán</h3>
+                        <p>Trên trang chủ, nhấn vào một trong các nút thuật toán (Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, Merge Sort) để chọn thuật toán bạn muốn học và quan sát.</p>
+                        <p><strong>Mẹo:</strong> Nếu bạn mới bắt đầu, hãy thử Bubble Sort hoặc Insertion Sort vì chúng dễ hiểu nhất.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Điều Chỉnh Tham Số</h3>
+                        <p>Sử dụng các thanh trượt để tùy chỉnh:</p>
+                        <ul>
+                            <li><strong>Tốc độ:</strong> Điều chỉnh từ 1 (chậm) đến 10 (nhanh) để xem mô phỏng ở tốc độ phù hợp</li>
+                            <li><strong>Số phần tử:</strong> Chọn từ 5 đến 50 phần tử trong mảng</li>
+                        </ul>
+                        <p><strong>Mẹo:</strong> Bắt đầu với tốc độ chậm và ít phần tử để dễ theo dõi.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Bắt Đầu Mô Phỏng</h3>
+                        <p>Sử dụng các nút điều khiển:</p>
+                        <ul>
+                            <li><strong>▶ Bắt Đầu:</strong> Chạy thuật toán</li>
+                            <li><strong>⏸ Tạm Dừng:</strong> Dừng tạm thời để quan sát</li>
+                            <li><strong>↻ Làm Mới:</strong> Reset về trạng thái ban đầu</li>
+                            <li><strong>🎲 Ngẫu Nhiên:</strong> Tạo mảng mới với các giá trị ngẫu nhiên</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Quan Sát & Học Tập</h3>
+                        <p>Theo dõi các thanh cột thay đổi màu sắc và vị trí. Chú ý đến:</p>
+                        <ul>
+                            <li>Các thanh đang được so sánh (màu vàng)</li>
+                            <li>Các thanh đang được hoán đổi (màu đỏ)</li>
+                            <li>Các thanh đã sắp xếp xong (màu xanh lá)</li>
+                            <li>Số lần so sánh và hoán đổi để hiểu hiệu suất</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-guide">
+                <h2>Ý Nghĩa Màu Sắc</h2>
+                <div class="color-items">
+                    <div class="color-item">
+                        <span class="color-box" style="background: #1e90ff;"></span>
+                        <div>
+                            <strong>Xanh Dương</strong>
+                            <p>Phần tử chưa được sắp xếp</p>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #ffc107;"></span>
+                        <div>
+                            <strong>Vàng</strong>
+                            <p>Đang so sánh hai phần tử</p>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #dc3545;"></span>
+                        <div>
+                            <strong>Đỏ</strong>
+                            <p>Đang hoán đổi vị trí</p>
+                        </div>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #28a745;"></span>
+                        <div>
+                            <strong>Xanh Lá</strong>
+                            <p>Đã sắp xếp hoàn thành</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2>Mẹo Học Tập Hiệu Quả</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>Ghi Chú</h3>
+                        <p>Viết lại các bước thuật toán bằng lời của bạn trong khi xem mô phỏng</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Lặp Lại</h3>
+                        <p>Xem mô phỏng nhiều lần với các mảng khác nhau để hiểu rõ hơn</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>So Sánh</h3>
+                        <p>Chạy cùng một mảng với các thuật toán khác nhau để so sánh hiệu suất</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>Thực Hành</h3>
+                        <p>Sau khi hiểu, hãy thử tự code lại thuật toán</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuật Toán Sắp Xếp</h3>
+                    <p>Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="algorithms.html">Thuật Toán</a></li>
+                        <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>Email: makara1999.tv@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

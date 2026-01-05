@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - Thuật Toán Sắp Xếp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Học Thuật Toán Sắp Xếp</h1>
+            <h2>Đăng Nhập</h2>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Tên đăng nhập:</label>
+                    <input type="text" id="username" name="username" required placeholder="Nhập tên đăng nhập">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" name="password" required placeholder="Nhập mật khẩu">
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="remember"> Ghi nhớ đăng nhập
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Đăng Nhập</button>
+                
+                <div class="form-footer">
+                    <p>Chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
+                </div>
+            </form>
+            
+            <div id="loginMessage" class="message"></div>
+            
+            <div class="demo-info">
+                <p><strong>Tài khoản demo:</strong></p>
+                <p>Admin: <code>tung</code> | Mật khẩu: <code>tung</code></p>
+                <p>User: <code>student</code> | Mật khẩu: <code>password</code></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

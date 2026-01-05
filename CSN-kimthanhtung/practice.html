@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện Tập - Thuật Toán Sắp Xếp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Thuật Toán Sắp Xếp</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="algorithms.html">Thuật Toán</a></li>
+                    <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                    <li><a href="practice.html" class="active">Luyện Tập</a></li>
+                    <li><a href="contact.html">Liên Hệ</a></li>
+                </ul>
+                <div id="userInfo" class="user-info"></div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Practice Section -->
+    <section class="practice-section page-section">
+        <div class="container">
+            <h1 class="page-title">Luyện Tập Thuật Toán</h1>
+            <p class="page-description">Thử thách bản thân với các bài tập sắp xếp khác nhau</p>
+
+            <div class="practice-modes">
+                <div class="mode-card">
+                    <h3>Chế Độ Tự Do</h3>
+                    <p>Tự tạo mảng và chọn thuật toán để thực hành</p>
+                    <button onclick="startFreeMode()" class="btn btn-primary">Bắt Đầu</button>
+                </div>
+
+                <div class="mode-card">
+                    <h3>Thử Thách Tốc Độ</h3>
+                    <p>Sắp xếp mảng trong thời gian ngắn nhất</p>
+                    <button onclick="startSpeedChallenge()" class="btn btn-primary">Thử Thách</button>
+                </div>
+
+                <div class="mode-card">
+                    <h3>So Sánh Thuật Toán</h3>
+                    <p>Chạy nhiều thuật toán cùng lúc để so sánh</p>
+                    <button onclick="startComparison()" class="btn btn-primary">So Sánh</button>
+                </div>
+            </div>
+
+            <!-- Free Mode -->
+            <div id="freeMode" class="practice-mode" style="display: none;">
+                <h2>Chế Độ Tự Do</h2>
+                <div class="practice-controls">
+                    <div class="input-group">
+                        <label>Nhập mảng của bạn:</label>
+                        <input type="text" id="practiceArray" placeholder="Ví dụ: 5,3,8,1,9,2,7">
+                        <button onclick="setPracticeArray()" class="btn btn-secondary">Áp Dụng</button>
+                    </div>
+                    
+                    <div class="algorithm-selector">
+                        <label>Chọn thuật toán:</label>
+                        <select id="practiceAlgorithm">
+                            <option value="bubble">Bubble Sort</option>
+                            <option value="selection">Selection Sort</option>
+                            <option value="insertion">Insertion Sort</option>
+                            <option value="quick">Quick Sort</option>
+                            <option value="merge">Merge Sort</option>
+                        </select>
+                    </div>
+                    
+                    <button onclick="runPractice()" class="btn btn-primary">Chạy Thuật Toán</button>
+                </div>
+                
+                <div id="practiceVisualization" class="visualization">
+                    <div id="practiceContainer" class="array-container"></div>
+                </div>
+                
+                <div id="practiceStats" class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">So sánh:</span>
+                        <span id="practiceComparisons" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Hoán đổi:</span>
+                        <span id="practiceSwaps" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Thời gian:</span>
+                        <span id="practiceTime" class="stat-value">0s</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speed Challenge -->
+            <div id="speedChallenge" class="practice-mode" style="display: none;">
+                <h2>Thử Thách Tốc Độ</h2>
+                <div class="challenge-info">
+                    <p>Mục tiêu: Sắp xếp mảng trong thời gian ngắn nhất có thể!</p>
+                    <div class="challenge-stats">
+                        <div>Thời gian tốt nhất: <span id="bestTime">--</span></div>
+                        <div>Lần thử: <span id="attempts">0</span></div>
+                    </div>
+                </div>
+                
+                <div class="challenge-controls">
+                    <button onclick="generateChallenge()" class="btn btn-primary">Tạo Thử Thách Mới</button>
+                    <button onclick="startTimer()" class="btn btn-secondary" id="timerBtn" disabled>Bắt Đầu</button>
+                </div>
+                
+                <div id="challengeArray" class="challenge-display"></div>
+                <div id="userSolution" class="user-input">
+                    <label>Nhập kết quả sắp xếp:</label>
+                    <input type="text" id="solutionInput" placeholder="Nhập mảng đã sắp xếp..." disabled>
+                    <button onclick="checkSolution()" class="btn btn-primary" id="checkBtn" disabled>Kiểm Tra</button>
+                </div>
+            </div>
+
+            <!-- Comparison Mode -->
+            <div id="comparisonMode" class="practice-mode" style="display: none;">
+                <h2>So Sánh Thuật Toán</h2>
+                <div class="comparison-controls">
+                    <div class="input-group">
+                        <label>Mảng để so sánh:</label>
+                        <input type="text" id="comparisonArray" placeholder="Ví dụ: 64,34,25,12,22,11,90">
+                        <button onclick="runComparison()" class="btn btn-primary">So Sánh Tất Cả</button>
+                    </div>
+                </div>
+                
+                <div id="comparisonResults" class="comparison-results"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuật Toán Sắp Xếp</h3>
+                    <p>Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="algorithms.html">Thuật Toán</a></li>
+                        <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>Email: makara1999.tv@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="practice.js"></script>
+</body>
+</html>

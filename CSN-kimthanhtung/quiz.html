@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trắc Nghiệm - Thuật Toán Sắp Xếp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles-bootstrap.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary-color);">
+                <i class="bi bi-bar-chart-steps me-2"></i>Thuật Toán Sắp Xếp
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house me-1"></i>Trang Chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>Giới Thiệu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="algorithms.html">
+                            <i class="bi bi-code-slash me-1"></i>Thuật Toán
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutorial.html">
+                            <i class="bi bi-book me-1"></i>Hướng Dẫn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="quiz.html">
+                            <i class="bi bi-question-circle me-1"></i>Trắc Nghiệm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i>Liên Hệ
+                        </a>
+                    </li>
+                </ul>
+                <div id="userInfo" class="d-flex align-items-center"></div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <!-- Quiz Header -->
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-primary mb-3">
+                <i class="bi bi-lightbulb me-3"></i>Trắc Nghiệm Thuật Toán
+            </h1>
+            <p class="lead text-muted">Kiểm tra kiến thức của bạn về các thuật toán sắp xếp</p>
+        </div>
+
+        <!-- Quiz Selection -->
+        <div id="quizSelection" class="row justify-content-center mb-5">
+            <div class="col-md-8 col-lg-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-5">
+                        <i class="bi bi-lightbulb text-primary fs-1 mb-4"></i>
+                        <h4 class="card-title mb-3">Trắc Nghiệm Thuật Toán Sắp Xếp</h4>
+                        <p class="card-text text-muted mb-4">
+                            Kiểm tra kiến thức của bạn với 10 câu hỏi được chọn ngẫu nhiên từ ngân hàng 30 câu hỏi về Bubble Sort, Selection Sort và Insertion Sort.
+                        </p>
+                        <div class="mb-4">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="text-primary fw-bold fs-4">30</div>
+                                    <div class="text-muted small">Câu hỏi</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-success fw-bold fs-4">10</div>
+                                    <div class="text-muted small">Câu làm</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-warning fw-bold fs-4">
+                                        <i class="bi bi-shuffle"></i>
+                                    </div>
+                                    <div class="text-muted small">Trộn câu</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg px-5" onclick="startQuiz()">
+                            <i class="bi bi-play me-2"></i>Bắt Đầu Làm Bài
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" class="d-none">
+            <!-- Quiz Progress -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-muted">Câu hỏi <span id="currentQuestion">1</span> / <span id="totalQuestions">10</span></span>
+                        <span class="text-muted">Thời gian: <span id="timer" class="fw-bold text-primary">00:00</span></span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                        <div id="progressBar" class="progress-bar bg-primary" style="width: 10%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question Card -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h4 id="questionText" class="mb-4">Câu hỏi sẽ hiển thị ở đây</h4>
+                    <div id="answersContainer">
+                        <!-- Answers will be inserted here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Controls -->
+            <div class="d-flex justify-content-between">
+                <button id="prevBtn" class="btn btn-outline-secondary" onclick="previousQuestion()" disabled>
+                    <i class="bi bi-chevron-left me-2"></i>Câu Trước
+                </button>
+                <button id="nextBtn" class="btn btn-primary" onclick="nextQuestion()" disabled>
+                    Câu Tiếp <i class="bi bi-chevron-right ms-2"></i>
+                </button>
+                <button id="submitBtn" class="btn btn-success d-none" onclick="submitQuiz()">
+                    <i class="bi bi-check me-2"></i>Nộp Bài
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div id="resultsContainer" class="d-none">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center p-5">
+                    <div id="resultIcon" class="mb-4">
+                        <!-- Icon will be inserted here -->
+                    </div>
+                    <h2 id="resultTitle" class="mb-3">Kết Quả</h2>
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="fs-2 fw-bold text-primary" id="scoreDisplay">0/10</div>
+                                <div class="text-muted">Điểm Số</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="fs-2 fw-bold text-success" id="correctCount">0</div>
+                                <div class="text-muted">Đúng</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="fs-2 fw-bold text-danger" id="wrongCount">0</div>
+                                <div class="text-muted">Sai</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="text-center">
+                                <div class="fs-2 fw-bold text-warning" id="timeDisplay">00:00</div>
+                                <div class="text-muted">Thời Gian</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="progress mb-2" style="height: 20px;">
+                            <div id="resultProgress" class="progress-bar" style="width: 0%"></div>
+                        </div>
+                        <div id="resultMessage" class="text-muted"></div>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-center">
+                        <button class="btn btn-primary" onclick="restartQuiz()">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Làm Lại Bài Này
+                        </button>
+                        <button class="btn btn-outline-secondary" onclick="backToSelection()">
+                            <i class="bi bi-shuffle me-2"></i>Làm Bài Mới
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-bar-chart-steps me-2"></i>Thuật Toán Sắp Xếp
+                    </h5>
+                    <p class="text-muted">Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên và người yêu thích lập trình.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Liên Kết Nhanh</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Giới Thiệu
+                        </a></li>
+                        <li><a href="algorithms.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Thuật Toán
+                        </a></li>
+                        <li><a href="tutorial.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Hướng Dẫn
+                        </a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Liên Hệ
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Liên Hệ</h6>
+                    <p class="text-muted">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:makara1999.tv@gmail.com" class="text-muted text-decoration-none">
+                            makara1999.tv@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="text-muted mb-0">&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>

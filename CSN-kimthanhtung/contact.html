@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Học Thuật Toán Sắp Xếp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-text">Thuật Toán Sắp Xếp</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="about.html">Giới Thiệu</a></li>
+                    <li><a href="algorithms.html">Thuật Toán</a></li>
+                    <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                    <li><a href="contact.html" class="active">Liên Hệ</a></li>
+                </ul>
+                <div id="userInfo" class="user-info"></div>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Liên Hệ -->
+    <section class="contact-section page-section">
+        <div class="container">
+            <h1 class="page-title">Liên Hệ</h1>
+            <p class="page-description">Chúng tôi luôn sẵn sàng lắng nghe ý kiến và hỗ trợ bạn</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:makara1999.tv@gmail.com">makara1999.tv@gmail.com</a></p>
+                            <p class="contact-desc">Gửi email cho chúng tôi bất cứ lúc nào. Chúng tôi sẽ phản hồi trong vòng 24 giờ.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div>
+                            <h3>Phản Hồi & Góp Ý</h3>
+                            <p>Chúng tôi luôn lắng nghe ý kiến đóng góp của bạn để cải thiện website.</p>
+                            <p class="contact-desc">Mọi ý kiến của bạn đều rất quan trọng với chúng tôi!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div>
+                            <h3>Hỗ Trợ Học Tập</h3>
+                            <p>Gặp khó khăn trong việc hiểu thuật toán? Hãy liên hệ với chúng tôi!</p>
+                            <p class="contact-desc">Chúng tôi sẵn sàng giải đáp mọi thắc mắc về thuật toán.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div>
+                            <h3>Báo Lỗi</h3>
+                            <p>Phát hiện lỗi hoặc vấn đề kỹ thuật?</p>
+                            <p class="contact-desc">Hãy cho chúng tôi biết để chúng tôi có thể khắc phục nhanh chóng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Gửi Tin Nhắn</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Họ và tên:</label>
+                            <input type="text" id="name" name="name" required placeholder="Nhập họ và tên của bạn">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Nhập email của bạn">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Chủ đề:</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Chọn chủ đề</option>
+                                <option value="feedback">Phản hồi</option>
+                                <option value="support">Hỗ trợ học tập</option>
+                                <option value="bug">Báo lỗi</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nội dung:</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Nhập nội dung tin nhắn..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Gửi Tin Nhắn</button>
+                    </form>
+                    <div id="contactMessage" class="message" style="display: none;"></div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thuật Toán Sắp Xếp</h3>
+                    <p>Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Kết</h3>
+                    <ul>
+                        <li><a href="about.html">Giới Thiệu</a></li>
+                        <li><a href="algorithms.html">Thuật Toán</a></li>
+                        <li><a href="tutorial.html">Hướng Dẫn</a></li>
+                        <li><a href="contact.html">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Liên Hệ</h3>
+                    <p>Email: makara1999.tv@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <script src="simple_contact.js"></script>
+</body>
+</html>

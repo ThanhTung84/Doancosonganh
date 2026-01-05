@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thuật Toán Sắp Xếp - Học Trực Quan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles-bootstrap.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary-color);">
+                <i class="bi bi-bar-chart-steps me-2"></i>Thuật Toán Sắp Xếp
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="bi bi-house me-1"></i>Trang Chủ
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>Giới Thiệu
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="algorithms.html">
+                            <i class="bi bi-code-slash me-1"></i>Thuật Toán
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tutorial.html">
+                            <i class="bi bi-book me-1"></i>Hướng Dẫn
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">
+                            <i class="bi bi-question-circle me-1"></i>Trắc Nghiệm
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope me-1"></i>Liên Hệ
+                        </a>
+                    </li>
+                </ul>
+                <div id="userInfo" class="d-flex align-items-center"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section bg-primary text-white py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="display-4 fw-bold mb-4">Học Thuật Toán Sắp Xếp</h1>
+                    <p class="lead mb-4">Khám phá và hiểu rõ các thuật toán sắp xếp qua mô phỏng trực quan, tương tác</p>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-eye me-2 fs-4 text-warning"></i>
+                                <span>Mô phỏng trực quan</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-bar-chart me-2 fs-4 text-success"></i>
+                                <span>Thống kê chi tiết</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-mortarboard me-2 fs-4 text-info"></i>
+                                <span>Dễ hiểu, dễ học</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giới Thiệu -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Giới Thiệu</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Chào mừng bạn đến với <strong>Thuật Toán Sắp Xếp</strong> - nền tảng học tập thuật toán sắp xếp trực quan và hiệu quả nhất dành cho sinh viên!</p>
+                    <p>Website được thiết kế để giúp sinh viên hiểu rõ cách hoạt động của các thuật toán sắp xếp thông qua mô phỏng trực quan, dễ hiểu. Thay vì chỉ đọc lý thuyết khô khan, bạn có thể xem trực tiếp từng bước thực thi của thuật toán.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-number">5+</span>
+                            <span class="highlight-text">Thuật toán phổ biến</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">100%</span>
+                            <span class="highlight-text">Miễn phí</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-number">24/7</span>
+                            <span class="highlight-text">Học mọi lúc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <!-- Algorithm Selection -->
+        <section class="mb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">
+                        <i class="bi bi-gear text-primary me-2"></i>Chọn Thuật Toán
+                    </h2>
+                    <div class="row g-3 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <button class="btn btn-outline-primary w-100 algo-btn active" data-algo="bubble">
+                                Bubble Sort
+                            </button>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <button class="btn btn-outline-primary w-100 algo-btn" data-algo="selection">
+                                Selection Sort
+                            </button>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <button class="btn btn-outline-primary w-100 algo-btn" data-algo="insertion">
+                                Insertion Sort
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Algorithm Info -->
+        <section class="mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-primary" id="algo-name">
+                        <i class="bi bi-info-circle me-2"></i>Bubble Sort
+                    </h4>
+                    <p class="card-text" id="algo-description">
+                        Thuật toán sắp xếp nổi bọt so sánh các cặp phần tử liền kề và hoán đổi chúng nếu chúng sai thứ tự.
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <span class="badge bg-secondary me-2">Độ phức tạp:</span>
+                        <span class="fw-bold text-warning" id="algo-complexity">O(n²)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Controls -->
+        <section class="mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-sliders text-primary me-2"></i>Điều Khiển
+                    </h5>
+                    
+                    <!-- Control Buttons -->
+                    <div class="row g-2 mb-4">
+                        <div class="col-md-3 col-6">
+                            <button id="startBtn" class="btn btn-success w-100">
+                                <i class="bi bi-play me-1"></i>Bắt Đầu
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <button id="pauseBtn" class="btn btn-warning w-100" disabled>
+                                <i class="bi bi-pause me-1"></i>Tạm Dừng
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <button id="resetBtn" class="btn btn-outline-secondary w-100">
+                                <i class="bi bi-arrow-clockwise me-1"></i>Làm Mới
+                            </button>
+                        </div>
+                        <div class="col-md-3 col-6">
+                            <button id="randomBtn" class="btn btn-outline-primary w-100">
+                                <i class="bi bi-shuffle me-1"></i>Ngẫu Nhiên
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Sliders -->
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-6">
+                            <label for="speedSlider" class="form-label">
+                                <i class="bi bi-speedometer me-1"></i>Tốc độ: <span id="speedValue" class="badge bg-primary">5</span>
+                            </label>
+                            <input type="range" class="form-range" id="speedSlider" min="1" max="10" value="5">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="sizeSlider" class="form-label">
+                                <i class="bi bi-list-ol me-1"></i>Số phần tử: <span id="sizeValue" class="badge bg-primary">15</span>
+                            </label>
+                            <input type="range" class="form-range" id="sizeSlider" min="5" max="50" value="15">
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Array Input -->
+                    <div class="mb-3">
+                        <label for="customArray" class="form-label">
+                            <i class="bi bi-keyboard me-1"></i>Nhập mảng tùy chỉnh:
+                        </label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="customArray" 
+                                   placeholder="Ví dụ: 64, 34, 25, 12, 22, 11, 90">
+                            <button class="btn btn-outline-primary" type="button" id="applyCustomBtn">
+                                <i class="bi bi-check me-1"></i>Áp Dụng
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Sample Arrays -->
+                    <div>
+                        <label class="form-label">
+                            <i class="bi bi-collection me-1"></i>Mảng mẫu:
+                        </label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="btn btn-outline-secondary btn-sm" data-array="5,2,8,1,9">Đơn giản</button>
+                            <button class="btn btn-outline-secondary btn-sm" data-array="64,34,25,12,22,11,90">Trung bình</button>
+                            <button class="btn btn-outline-secondary btn-sm" data-array="100,50,75,25,60,40,80,20,90,10">Phức tạp</button>
+                            <button class="btn btn-outline-secondary btn-sm" data-array="1,2,3,4,5,6,7,8,9,10">Đã sắp xếp</button>
+                            <button class="btn btn-outline-secondary btn-sm" data-array="10,9,8,7,6,5,4,3,2,1">Ngược</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visualization -->
+        <section class="mb-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="bi bi-bar-chart text-primary me-2"></i>Mô Phỏng Trực Quan
+                    </h5>
+                    <div class="visualization-area bg-light rounded p-4" style="min-height: 400px;">
+                        <div id="arrayContainer" class="d-flex align-items-end justify-content-center gap-1" style="height: 350px;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="mb-4">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-left-right fs-3 mb-2 text-warning"></i>
+                            <h6 class="card-title text-muted">So sánh</h6>
+                            <h3 class="text-primary mb-0" id="comparisons">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-down-up fs-3 mb-2 text-danger"></i>
+                            <h6 class="card-title text-muted">Hoán đổi</h6>
+                            <h3 class="text-primary mb-0" id="swaps">0</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm text-center">
+                        <div class="card-body">
+                            <i class="bi bi-info-circle fs-3 mb-2 text-success"></i>
+                            <h6 class="card-title text-muted">Trạng thái</h6>
+                            <h5 class="text-primary mb-0" id="status">Sẵn sàng</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chi Tiết Thuật Toán -->
+    <section id="algorithms" class="algorithms-detail-section">
+        <div class="container">
+            <h2 class="section-title">Các Thuật Toán Sắp Xếp</h2>
+            <div class="algorithms-grid">
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Bubble Sort</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p>Thuật toán sắp xếp nổi bọt so sánh các cặp phần tử liền kề và hoán đổi chúng nếu sai thứ tự. Đơn giản nhưng không hiệu quả với dữ liệu lớn.</p>
+                    <ul class="algo-features">
+                        <li>✓ Dễ hiểu, dễ cài đặt</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✗ Chậm với dữ liệu lớn</li>
+                    </ul>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Selection Sort</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p>Tìm phần tử nhỏ nhất trong phần chưa sắp xếp và đặt nó vào đầu. Lặp lại cho đến khi hoàn thành toàn bộ mảng.</p>
+                    <ul class="algo-features">
+                        <li>✓ Đơn giản, dễ hiểu</li>
+                        <li>✓ Ít phép hoán đổi</li>
+                        <li>✗ Không ổn định</li>
+                    </ul>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Insertion Sort</h3>
+                        <span class="complexity-badge">O(n²)</span>
+                    </div>
+                    <p>Xây dựng mảng đã sắp xếp từng phần tử một bằng cách chèn mỗi phần tử vào vị trí đúng trong phần đã sắp xếp.</p>
+                    <ul class="algo-features">
+                        <li>✓ Hiệu quả với dữ liệu nhỏ</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✓ Tốt với dữ liệu gần sắp xếp</li>
+                    </ul>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Quick Sort</h3>
+                        <span class="complexity-badge success">O(n log n)</span>
+                    </div>
+                    <p>Thuật toán chia để trị chọn một pivot và phân hoạch mảng thành hai phần nhỏ hơn và lớn hơn pivot, sau đó sắp xếp đệ quy.</p>
+                    <ul class="algo-features">
+                        <li>✓ Rất nhanh trong thực tế</li>
+                        <li>✓ Hiệu quả với dữ liệu lớn</li>
+                        <li>✗ Không ổn định</li>
+                    </ul>
+                </div>
+
+                <div class="algo-card">
+                    <div class="algo-card-header">
+                        <h3>Merge Sort</h3>
+                        <span class="complexity-badge success">O(n log n)</span>
+                    </div>
+                    <p>Chia mảng thành các mảng con nhỏ hơn, sắp xếp chúng và sau đó trộn lại thành mảng đã sắp xếp hoàn chỉnh.</p>
+                    <ul class="algo-features">
+                        <li>✓ Hiệu suất ổn định</li>
+                        <li>✓ Ổn định (Stable)</li>
+                        <li>✓ Tốt với dữ liệu lớn</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hướng Dẫn -->
+    <section id="tutorial" class="tutorial-section">
+        <div class="container">
+            <h2 class="section-title">Hướng Dẫn Sử Dụng</h2>
+            <div class="tutorial-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Chọn Thuật Toán</h3>
+                        <p>Nhấn vào một trong các nút thuật toán (Bubble Sort, Selection Sort, v.v.) để chọn thuật toán bạn muốn học.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Điều Chỉnh Tham Số</h3>
+                        <p>Sử dụng thanh trượt để điều chỉnh tốc độ mô phỏng và số lượng phần tử trong mảng theo ý muốn.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Bắt Đầu Mô Phỏng</h3>
+                        <p>Nhấn nút "Bắt Đầu" để xem thuật toán hoạt động. Bạn có thể tạm dừng, làm mới hoặc tạo mảng ngẫu nhiên mới.</p>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Quan Sát & Học Tập</h3>
+                        <p>Theo dõi các thanh cột thay đổi màu sắc và vị trí. Xem số lần so sánh và hoán đổi để hiểu hiệu suất thuật toán.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="color-guide">
+                <h3>Ý Nghĩa Màu Sắc</h3>
+                <div class="color-items">
+                    <div class="color-item">
+                        <span class="color-box" style="background: #1e90ff;"></span>
+                        <span>Chưa sắp xếp</span>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #ffc107;"></span>
+                        <span>Đang so sánh</span>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #dc3545;"></span>
+                        <span>Đang hoán đổi</span>
+                    </div>
+                    <div class="color-item">
+                        <span class="color-box" style="background: #28a745;"></span>
+                        <span>Đã sắp xếp</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên Hệ -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Liên Hệ</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:makara1999.tv@gmail.com">makara1999.tv@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h3>Phản Hồi</h3>
+                            <p>Chúng tôi luôn lắng nghe ý kiến đóng góp của bạn để cải thiện website.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h3>Hỗ Trợ Học Tập</h3>
+                            <p>Gặp khó khăn trong việc hiểu thuật toán? Hãy liên hệ với chúng tôi!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-primary mb-3">
+                        <i class="bi bi-bar-chart-steps me-2"></i>Thuật Toán Sắp Xếp
+                    </h5>
+                    <p class="text-muted">Nền tảng học thuật toán sắp xếp trực quan dành cho sinh viên và người yêu thích lập trình.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Liên Kết Nhanh</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Giới Thiệu
+                        </a></li>
+                        <li><a href="algorithms.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Thuật Toán
+                        </a></li>
+                        <li><a href="tutorial.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Hướng Dẫn
+                        </a></li>
+                        <li><a href="quiz.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Trắc Nghiệm
+                        </a></li>
+                        <li><a href="contact.html" class="text-muted text-decoration-none">
+                            <i class="bi bi-chevron-right me-1"></i>Liên Hệ
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="mb-3">Liên Hệ</h6>
+                    <p class="text-muted">
+                        <i class="bi bi-envelope me-2"></i>
+                        <a href="mailto:makara1999.tv@gmail.com" class="text-muted text-decoration-none">
+                            makara1999.tv@gmail.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="text-muted mb-0">&copy; 2025 Website Học Thuật Toán Sắp Xếp</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
